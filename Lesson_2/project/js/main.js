@@ -72,64 +72,64 @@ const pl = new ProductList();
 
 
 
-// class Basketlist {
-//             basketGoods;
-//             basketAllProducts;
+class Basketlist {
+            basketGoods;
+            basketAllProducts;
             
         
-//             constructor(container = '.basket') {
-//                 this.container = container;
-//                 this.basketGoods = [];
-//                 this.basketAllProducts = [];
+            constructor(container = '.basket') {
+                this.container = container;
+                this.basketGoods = [];
+                this.basketAllProducts = [];
         
-//                 this.fetchGoods();
-//                 this.render();
-//             }
+                this.fetchGoods();
+                this.render();
+            }
         
         
         
-//             fetchGoods() {
-//                 this.basketGoods = [
-//                     {id: 1, title: 'Notebook', price: 20000},
-//                     {id: 2, title: 'Mouse', price: 1500},
-//                     {id: 3, title: 'Keyboard', price: 5000},
-//                     {id: 4, title: 'Gamepad', price: 4500},
-//                 ];
-//             }
+            fetchGoods() {
+                this.basketGoods = [
+                    {id: 1, title: 'Notebook', price: 20000},
+                    {id: 2, title: 'Mouse', price: 1500},
+                    {id: 3, title: 'Keyboard', price: 5000},
+                    {id: 4, title: 'Gamepad', price: 4500},
+                ];
+            }
         
-//             render() {
-//                 const block = document.querySelector(this.container);
+            render() {
+                const block = document.querySelector(this.container);
         
-//                 for (const good of this.basketGoods) {
-//                     const basketObject = new BasketItem(good);
-//                     // console.log(productObject);
-//                     this.basketAllProducts.push(basketObject);
-//                     block.insertAdjacentHTML('afterbegin', basketObject.render());
-//                 }
-//             }
+                for (const good of this.basketGoods) {
+                    const basketObject = new BasketItem(good);
+                    // console.log(productObject);
+                    this.basketAllProducts.push(basketObject);
+                    block.insertAdjacentHTML('afterbegin', basketObject.render());
+                }
+            }
     
-// }
+}
 
-// class BasketItem {
-//     constructor(basket, img = 'https://via.placeholder.com/200x150') {
-//         this.title = basket.title;
-//         this.price = basket.price;
-//         this.id = basket.id;
-//         this.img = img;
-//         this.quantity = 0;
-//     }
+class BasketItem {
+    constructor(basket, img = 'https://via.placeholder.com/200x150') {
+        this.title = basket.title;
+        this.price = basket.price;
+        this.id = basket.id;
+        this.img = img;
+        this.quantity = 0;
+    }
 
-//     render() {
-//         return `<div class="basket-item" data-id="${this.id}">
-//                       <img src="${this.img}" alt="Some img">
-//                       <div class="desc">
-//                           <h3>${this.title}</h3>
-//                           <p>${this.price} \u20bd</p>
-//                           <p>${this.quantity}шт</p>
+    render() {
+        return `<div class="basket-item" data-id="${this.id}">
+                      <img src="${this.img}" alt="Some img">
+                      <div class="desc">
+                          <h3>${this.title}</h3>
+                          <p>${this.price} \u20bd</p>
+                          <p>${this.quantity}шт</p>
                           
-//                       </div>
-//                   </div>`;
-//     } 
-// }
+                      </div>
+                  </div>`;
+    } 
+}
 
-// const bpl = new Basketlist();
+const bpl = new Basketlist();
